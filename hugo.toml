@@ -18,3 +18,7 @@ theme = 'minimalist'
   [[params.social]]
     name = "email"
     link = "benoit.paquier@ik.me"  # no need for "mailto:" in the head
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
