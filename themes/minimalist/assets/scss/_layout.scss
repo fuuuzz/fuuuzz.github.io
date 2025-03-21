@@ -1,0 +1,25 @@
+html {
+  background-color: $color-text;
+  font-size: $font-size;
+}
+
+body {
+  font-family: $font-family-regular, monospace;
+  background-color: $color-background;
+  color: $color-text;
+  border-top: 2px solid $color-text;
+  min-height: calc(100vh - 2px);
+  font-weight: 400;
+  text-rendering: geometricPrecision;
+}
+
+main,
+header,
+footer {
+  max-width: $content-width;
+  margin: 0 auto;
+}
+
+main {
+  min-height: calc(100vh - #{$header-height} - #{$footer-height});
+}

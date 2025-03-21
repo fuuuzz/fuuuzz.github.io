@@ -1,0 +1,6 @@
+{{ $iconPath := printf "static/icons/%s.svg" .name }}
+{{ with readFile $iconPath }}
+  {{ . | safeHTML }}
+{{ else }}
+  <span style="color: red;">⚠️ Icône "{{ $.name }}" introuvable</span>
+{{ end }}

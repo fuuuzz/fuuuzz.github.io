@@ -1,0 +1,5 @@
+{{ if isset .Site.Params "description" }}
+  <p>
+    {{ .Site.Params.description | $.Page.RenderString }}
+  </p>
+{{ end }}
