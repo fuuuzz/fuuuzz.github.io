@@ -6,7 +6,6 @@ theme = 'minimalist'
 [params]
   # homepage
   mainTitle = '👋 Benoit Paquier'
-  description = "Développeur web depuis 2015, j'ai travaillé en France et au Canada sur divers projets techniques et fonctionnels. Autonome, rigoureux et communicant, je contribue efficacement en équipe, en favorisant un environnement de travail positif et innovant."
   
   #socials
   [[params.social]]

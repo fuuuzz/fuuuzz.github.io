@@ -23,3 +23,7 @@ footer {
 main {
   min-height: calc(100vh - #{$header-height} - #{$footer-height});
 }
+
+section {
+  margin-top: 4rem;
+}

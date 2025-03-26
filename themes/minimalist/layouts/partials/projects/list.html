@@ -1,0 +1,10 @@
+<section>
+  {{ with .Site.GetPage "projects" }}
+    <h2>{{ .Title }}</h2>
+  {{ end }}
+
+  {{ range sort (where site.RegularPages "Type" "projects") "Params.rank" }}
+    <p>{{ .Title }}</p>
+    {{ .Summary }}
+  {{ end }}
+</section>
