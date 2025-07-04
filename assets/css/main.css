@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@source "hugo_stats.json";
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+}
+
+@theme {
+  --color-primary: #0f172a;
+  --color-secondary: #14284a;
+  --color-accent: #60ecbd;
+  --color-accent-dark: #009670;
+  --color-stacks-bg: rgba(96, 236, 189, 0.05);
+  --font-jetbrains-mono: "JetBrains Mono", monospace;
+}
+
+main::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background:
+    radial-gradient(at 40% 40%, rgb(30, 144, 255) 0px, transparent 50%),
+    radial-gradient(at 90% 10%, rgb(255, 105, 180) 0px, transparent 50%),
+    radial-gradient(at 50% 95%, rgba(96, 236, 189, 0.5) 0px, transparent 50%),
+    radial-gradient(at 20% 30%, rgb(50, 205, 50) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, rgb(255, 69, 0) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, rgb(128, 0, 128) 0px, transparent 50%);
+  opacity: 0.1;
+}
+
+main::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: url("/images/bg-frame.png");
+  opacity: 0.008;
+}

@@ -1,0 +1,233 @@
+{{ define "main" }}
+  <div>
+    <h1 class="text-gray-100 text-5xl font-extrabold md:text-7xl">
+      {{ .Title }}
+    </h1>
+    <p class="text-accent text-base md:text-2xl font-bold font-jetbrains-mono">
+      {{ .Params.subtitle }}
+    </p>
+  </div>
+
+  {{ with .Params.about }}
+    <div class="flex flex-col gap-8 md:gap-12">
+      <h2
+        class="text-gray-100 text-2xl md:text-3xl font-jetbrains-mono font-extrabold underline underline-offset-8 decoration-accent decoration-4"
+      >
+        {{ .title }}
+      </h2>
+      <div>
+        <p class="text-gray-100 text-base md:text-lg mb-4">
+          {{ .paragraph1 }}
+        </p>
+        <p class="text-gray-100 text-base md:text-lg mb-4">
+          {{ .paragraph2 }}
+        </p>
+        <p class="text-gray-100 text-base md:text-lg mb-4">
+          {{ .paragraph3 }}
+        </p>
+        <p class="text-gray-100 text-base md:text-lg mb-4">
+          {{ .paragraph4 }}
+        </p>
+      </div>
+    </div>
+  {{ end }}
+
+  {{ with .Params.projects }}
+    <div class="flex flex-col gap-8 md:gap-12">
+      <h2
+        class="text-gray-100 text-xl md:text-2xl font-jetbrains-mono font-extrabold underline underline-offset-8 decoration-accent decoration-4"
+      >
+        {{ .title }}
+      </h2>
+      <ul class="flex flex-col md:flex-row gap-6 flex-wrap">
+        {{ range $index, $project := .projects }}
+          <li
+            class="project bg-secondary rounded-lg w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] overflow-hidden flex flex-col shadow-lg {{ if gt $index 5 }}
+              hidden
+            {{ end }}"
+          >
+            <div class="h-[150px]">
+              <img
+                src="images/{{ .illustration }}"
+                alt="{{ .title }}"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div
+              class="px-4 py-6 flex flex-col gap-6 justify-between flex-1 h-full"
+            >
+              <div class="flex flex-col gap-6">
+                <div>
+                  <div class="flex justify-between items-center">
+                    <h3
+                      class="text-gray-100 text-lg md:text-xl font-jetbrains-mono font-bold"
+                    >
+                      {{ .title }}
+                    </h3>
+                    <div class="flex gap-3">
+                      {{ if .website }}
+                        <a
+                          class="text-gray-100 hover:text-gray-300 transition-colors"
+                          href="{{ .website }}"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <div class="h-5 w-5">
+                            {{ partial "icons/external-link.html" . }}
+                          </div>
+                        </a>
+                      {{ end }}
+                      {{ if .repository }}
+                        <a
+                          class="text-gray-100 hover:text-gray-300 transition-colors"
+                          href="{{ .repository }}"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <div class="h-5 w-5">
+                            {{ partial "icons/github.html" . }}
+                          </div>
+                        </a>
+                      {{ end }}
+                    </div>
+                  </div>
+                  <p class="text-accent font-jetbrains-mono font-bold text-sm">
+                    {{ .client }}
+                  </p>
+                </div>
+                <p class="text-gray-100 text-base md:text-lg">
+                  {{ .description }}
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-1">
+                {{ range $element := .stacks }}
+                  <span
+                    class="px-2 py-1 bg-stacks-bg text-accent font-jetbrains-mono font-bold text-xs rounded-3xl"
+                  >
+                    {{ $element.value }}
+                  </span>
+                {{ end }}
+              </div>
+            </div>
+          </li>
+        {{ end }}
+      </ul>
+      <button
+        id="show-projects"
+        class="text-accent text-base font-jetbrains-mono font-bold underline underline-offset-8 decoration-accent decoration-2 flex items-center gap-2 justify-center cursor-pointer hover:text-white hover:decoration-white transition-all duration-300"
+        onclick="handleShowProjectsClick()"
+      >
+        Voir plus
+        <div class="h-4 w-4">
+          {{ partial "icons/chevron-down.html" }}
+        </div>
+      </button>
+      <button
+        id="hide-projects"
+        class="text-accent text-base font-jetbrains-mono font-bold underline underline-offset-8 decoration-accent decoration-2 flex items-center gap-2 justify-center cursor-pointer hover:text-white hover:decoration-white transition-all duration-300 hidden"
+        onclick="handleHideProjectsClick()"
+      >
+        Voir moins
+        <div class="h-4 w-4 rotate-180">
+          {{ partial "icons/chevron-down.html" }}
+        </div>
+      </button>
+    </div>
+  {{ end }}
+
+  {{ with .Params.experience }}
+    <div class="flex flex-col gap-8 md:gap-12 text-gray-100">
+      <h2
+        class="text-xl md:text-2xl font-jetbrains-mono font-extrabold underline underline-offset-8 decoration-accent decoration-4"
+      >
+        {{ .title }}
+      </h2>
+      <ul class="flex flex-col md:flex-row gap-8 flex-wrap">
+        {{ range $index, $experience := .experiences }}
+          <li
+            class="experience pl-4 border-accent border-l-2 flex flex-col gap-4 lg:flex-row lg:gap-12 {{ if gt $index 2 }}
+              hidden
+            {{ end }}"
+          >
+            {{ range .experience }}
+              <div class="flex flex-col gap-1">
+                <div class="flex items-center gap-2 w-full lg:w-[200px]">
+                  <div class="h-4 w-4">
+                    {{ partial "icons/calendar.html" }}
+                  </div>
+                  <p class="text-base">{{ .period }}</p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="h-4 w-4">
+                    {{ partial "icons/map-pin.html" }}
+                  </div>
+                  <p class="text-base">{{ .location }}</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-1 flex-1">
+                <p class="text-xl font-bold font-jetbrains-mono">
+                  {{ .position }}
+                </p>
+                <a
+                  class="flex items-center gap-2 text-accent text-sm font-bold font-jetbrains-mono hover:text-gray-300 transition-colors"
+                  href="{{ .companyHref }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {{ .company }}
+                  <div class="h-4 w-4">
+                    {{ partial "icons/external-link.html" }}
+                  </div>
+                </a>
+                <p class="text-base lg:text-lg">{{ .description }}</p>
+              </div>
+            {{ end }}
+          </li>
+        {{ end }}
+      </ul>
+      <button
+        id="show-experience"
+        class="text-accent text-base font-jetbrains-mono font-bold underline underline-offset-8 decoration-accent decoration-2 flex items-center gap-2 justify-center cursor-pointer hover:text-white hover:decoration-white transition-all duration-300"
+        onclick="handleShowExperienceClick()"
+      >
+        Voir plus
+        <div class="h-4 w-4">
+          {{ partial "icons/chevron-down.html" }}
+        </div>
+      </button>
+      <button
+        id="hide-experience"
+        class="text-accent text-base font-jetbrains-mono font-bold underline underline-offset-8 decoration-accent decoration-2 flex items-center gap-2 justify-center cursor-pointer hover:text-white hover:decoration-white transition-all duration-300 hidden"
+        onclick="handleHideExperienceClick()"
+      >
+        Voir moins
+        <div class="h-4 w-4 rotate-180">
+          {{ partial "icons/chevron-down.html" }}
+        </div>
+      </button>
+    </div>
+  {{ end }}
+
+  {{ with .Params.contact }}
+    <div class="flex flex-col gap-8 md:gap-12 text-gray-100">
+      <h2
+        class="text-xl md:text-2xl font-jetbrains-mono font-extrabold underline underline-offset-8 decoration-accent decoration-4"
+      >
+        {{ .title }}
+      </h2>
+      <ul class="flex gap-4">
+        {{ range .links }}
+          <li>
+            {{ range .link }}
+              <a href="{{ .href }}" target="_blank" rel="noopener noreferrer">
+                <div class="h-6 w-6">
+                  {{ partial .icon }}
+                </div>
+              </a>
+            {{ end }}
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+{{ end }}
