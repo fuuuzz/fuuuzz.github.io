@@ -2,6 +2,7 @@ const showProjectsButton = document.getElementById("show-projects");
 const hideProjectsButton = document.getElementById("hide-projects");
 const showExperienceButton = document.getElementById("show-experience");
 const hideExperienceButton = document.getElementById("hide-experience");
+const scrollToTopButton = document.getElementById("scroll-to-top");
 
 const projects = document.querySelectorAll(".project");
 const experiences = document.querySelectorAll(".experience");
@@ -45,3 +46,23 @@ const handleHideExperienceClick = () => {
     }
   });
 };
+
+const handleScrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
+const toggleScrollToTopButton = () => {
+  if (window.scrollY > 300) {
+    scrollToTopButton.classList.remove("opacity-0", "invisible");
+    scrollToTopButton.classList.add("opacity-100", "visible");
+  } else {
+    scrollToTopButton.classList.add("opacity-0", "invisible");
+    scrollToTopButton.classList.remove("opacity-100", "visible");
+  }
+};
+
+scrollToTopButton?.addEventListener("click", handleScrollToTop);
+window.addEventListener("scroll", toggleScrollToTopButton);
