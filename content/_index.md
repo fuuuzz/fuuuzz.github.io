@@ -14,6 +14,22 @@ projects:
   id: projets
   title: projets
   projects:
+    - title: "Nous La Rochelle"
+      illustration: "la-rochelle.webp"
+      client: "Office de tourisme de La Rochelle"
+      description: "Contribution à la refonte du site de l’office de tourisme de La Rochelle. Développement et mise en place de l'infrastructure pour un déploiement optimisé, sécurisé et scalable."
+      website: "https://www.nous-larochelle.fr/"
+      stacks:
+        - value: "NextJS"
+        - value: "Strapi"
+        - value: "Typescript"
+        - value: "Docker"
+        - value: "PostgreSQL"
+        - value: "Jest"
+        - value: "Playwright"
+        - value: "Gitlab CI/CD"
+        - value: "Scaleway"
+        - value: "Cloudflare"
     - title: "Boris"
       illustration: "boris.webp"
       client: "Ministère chargé du logement"
