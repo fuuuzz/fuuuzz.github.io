@@ -1,0 +1,35 @@
+{{ with . }}
+  <div class="flex flex-col gap-8 md:gap-12">
+    <h2
+      class="text-gray-100 text-xl md:text-2xl font-jetbrains-mono font-extrabold underline underline-offset-8 decoration-accent decoration-4"
+    >
+      {{ .title }}
+    </h2>
+    <ul class="flex flex-col md:flex-row gap-6 flex-wrap">
+      {{ range $index, $project := .projects }}
+        {{ partial "components/project-card.html" (dict "project" $project "index" $index) }}
+      {{ end }}
+    </ul>
+
+    <button
+      id="show-projects"
+      class="text-accent text-base font-jetbrains-mono font-bold underline underline-offset-8 decoration-accent decoration-2 flex items-center gap-2 justify-center cursor-pointer hover:text-white hover:decoration-white transition-all duration-300"
+      onclick="handleShowProjectsClick()"
+    >
+      Voir plus
+      <div class="h-4 w-4">
+        {{ partial "icons/chevron-down.html" }}
+      </div>
+    </button>
+    <button
+      id="hide-projects"
+      class="text-accent text-base font-jetbrains-mono font-bold underline underline-offset-8 decoration-accent decoration-2 flex items-center gap-2 justify-center cursor-pointer hover:text-white hover:decoration-white transition-all duration-300 hidden"
+      onclick="handleHideProjectsClick()"
+    >
+      Voir moins
+      <div class="h-4 w-4 rotate-180">
+        {{ partial "icons/chevron-down.html" }}
+      </div>
+    </button>
+  </div>
+{{ end }}

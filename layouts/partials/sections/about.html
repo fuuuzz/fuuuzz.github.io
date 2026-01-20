@@ -1,0 +1,23 @@
+{{ with . }}
+  <div class="flex flex-col gap-8 md:gap-12">
+    <h2
+      class="text-gray-100 text-2xl md:text-3xl font-jetbrains-mono font-extrabold underline underline-offset-8 decoration-accent decoration-4"
+    >
+      {{ .title }}
+    </h2>
+    <div>
+      <p class="text-gray-100 text-base md:text-lg mb-4">
+        {{ .paragraph1 }}
+      </p>
+      <p class="text-gray-100 text-base md:text-lg mb-4">
+        {{ .paragraph2 }}
+      </p>
+      <p class="text-gray-100 text-base md:text-lg mb-4">
+        {{ .paragraph3 }}
+      </p>
+      <p class="text-gray-100 text-base md:text-lg mb-4">
+        {{ .paragraph4 }}
+      </p>
+    </div>
+  </div>
+{{ end }}

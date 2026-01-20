@@ -1,0 +1,69 @@
+<li
+  class="project bg-secondary rounded-lg w-full md:w-[calc(50%-12px)] lg:w-[calc(33.33%-16px)] overflow-hidden flex flex-col shadow-lg {{ if gt .index 5 }}
+    hidden
+  {{ end }}"
+>
+  <div class="h-[150px]">
+    <img
+      src="images/{{ .project.illustration }}"
+      alt="{{ .project.title }}"
+      class="w-full h-full object-cover"
+    />
+  </div>
+  <div
+    class="px-4 py-6 flex flex-col gap-6 justify-between flex-1 h-full"
+  >
+    <div class="flex flex-col gap-6">
+      <div>
+        <div class="flex justify-between items-center">
+          <h3
+            class="text-gray-100 text-lg md:text-xl font-jetbrains-mono font-bold"
+          >
+            {{ .project.title }}
+          </h3>
+          <div class="flex gap-3">
+            {{ if .project.website }}
+              <a
+                class="text-gray-100 hover:text-gray-300 transition-colors"
+                href="{{ .project.website }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="h-5 w-5">
+                  {{ partial "icons/external-link.html" . }}
+                </div>
+              </a>
+            {{ end }}
+            {{ if .project.repository }}
+              <a
+                class="text-gray-100 hover:text-gray-300 transition-colors"
+                href="{{ .project.repository }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="h-5 w-5">
+                  {{ partial "icons/github.html" . }}
+                </div>
+              </a>
+            {{ end }}
+          </div>
+        </div>
+        <p class="text-accent font-jetbrains-mono font-bold text-sm">
+          {{ .project.client }}
+        </p>
+      </div>
+      <p class="text-gray-100 text-base md:text-lg">
+        {{ .project.description }}
+      </p>
+    </div>
+    <div class="flex flex-wrap gap-1">
+      {{ range $element := .project.stacks }}
+        <span
+          class="px-2 py-1 bg-stacks-bg text-accent font-jetbrains-mono font-bold text-xs rounded-3xl"
+        >
+          {{ $element.value }}
+        </span>
+      {{ end }}
+    </div>
+  </div>
+</li>

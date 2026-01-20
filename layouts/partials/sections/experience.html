@@ -1,0 +1,34 @@
+{{ with . }}
+  <div class="flex flex-col gap-8 md:gap-12 text-gray-100">
+    <h2
+      class="text-xl md:text-2xl font-jetbrains-mono font-extrabold underline underline-offset-8 decoration-accent decoration-4"
+    >
+      {{ .title }}
+    </h2>
+    <ul class="flex flex-col md:flex-row gap-8 flex-wrap">
+      {{ range $index, $experience := .experiences }}
+        {{ partial "components/experience-card.html" (dict "experience" $experience "index" $index) }}
+      {{ end }}
+    </ul>
+    <button
+      id="show-experience"
+      class="text-accent text-base font-jetbrains-mono font-bold underline underline-offset-8 decoration-accent decoration-2 flex items-center gap-2 justify-center cursor-pointer hover:text-white hover:decoration-white transition-all duration-300"
+      onclick="handleShowExperienceClick()"
+    >
+      Voir plus
+      <div class="h-4 w-4">
+        {{ partial "icons/chevron-down.html" }}
+      </div>
+    </button>
+    <button
+      id="hide-experience"
+      class="text-accent text-base font-jetbrains-mono font-bold underline underline-offset-8 decoration-accent decoration-2 flex items-center gap-2 justify-center cursor-pointer hover:text-white hover:decoration-white transition-all duration-300 hidden"
+      onclick="handleHideExperienceClick()"
+    >
+      Voir moins
+      <div class="h-4 w-4 rotate-180">
+        {{ partial "icons/chevron-down.html" }}
+      </div>
+    </button>
+  </div>
+{{ end }}

@@ -1,0 +1,39 @@
+<li
+  class="experience pl-4 border-accent border-l-2 flex flex-col gap-4 lg:flex-row lg:gap-12 {{ if gt .index 2 }}
+    hidden
+  {{ end }}"
+>
+  {{ range .experience.experience }}
+    <div class="flex flex-col gap-1">
+      <div class="flex items-center gap-2 w-full lg:w-[200px]">
+        <div class="h-4 w-4">
+          {{ partial "icons/calendar.html" }}
+        </div>
+        <p class="text-base">{{ .period }}</p>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="h-4 w-4">
+          {{ partial "icons/map-pin.html" }}
+        </div>
+        <p class="text-base">{{ .location }}</p>
+      </div>
+    </div>
+    <div class="flex flex-col gap-1 flex-1">
+      <p class="text-xl font-bold font-jetbrains-mono">
+        {{ .position }}
+      </p>
+      <a
+        class="flex items-center gap-2 text-accent text-sm font-bold font-jetbrains-mono hover:text-gray-300 transition-colors"
+        href="{{ .companyHref }}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {{ .company }}
+        <div class="h-4 w-4">
+          {{ partial "icons/external-link.html" }}
+        </div>
+      </a>
+      <p class="text-base lg:text-lg">{{ .description }}</p>
+    </div>
+  {{ end }}
+</li>

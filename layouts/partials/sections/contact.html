@@ -1,0 +1,22 @@
+{{ with . }}
+  <div class="flex flex-col gap-8 md:gap-12 text-gray-100">
+    <h2
+      class="text-xl md:text-2xl font-jetbrains-mono font-extrabold underline underline-offset-8 decoration-accent decoration-4"
+    >
+      {{ .title }}
+    </h2>
+    <ul class="flex gap-4">
+      {{ range .links }}
+        <li>
+          {{ range .link }}
+            <a href="{{ .href }}" target="_blank" rel="noopener noreferrer">
+              <div class="h-6 w-6">
+                {{ partial .icon }}
+              </div>
+            </a>
+          {{ end }}
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+{{ end }}
