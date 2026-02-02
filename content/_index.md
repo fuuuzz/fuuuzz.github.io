@@ -1,6 +1,6 @@
 ---
 title: "Benoit Paquier"
-subtitle: "Développeur web fullstack & formateur"
+subtitle: 'Développeur web fullstack, formateur & étudiant préparant un diplôme universitaire "Fabmanager"'
 
 about:
   id: a-propos
@@ -9,6 +9,7 @@ about:
   paragraph2: "Je suis développeur web fullstack, guidé par une approche artisanale du code (software craftmanship) et soucieux des bonnes pratiques de développement. Mon objectif : concevoir des applications web fiables, maintenables et accessibles, avec un vrai souci de qualité — dans le code comme dans l’expérience utilisateur."
   paragraph3: "Je m’inscris dans une démarche de qualité pour un numérique responsable, en privilégiant des solutions performantes, sobres et accessibles. Frontend ou backend, je m’adapte aux besoins pour construire des solutions efficaces, durables et centrées utilisateur."
   paragraph4: "J’interviens aussi comme formateur, pour transmettre ces valeurs et accompagner les développeurs dans la montée en compétence, parce qu’un bon code, c’est encore mieux quand il est partagé."
+  paragraph5: 'Je prépare également un diplôme universitaire "Fabmanager - Techniques de facilitation & de fabrication numérique". au Faclab de Gennevilliers à l''université de Cergy.'
 
 projects:
   id: projets
