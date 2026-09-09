@@ -1,36 +1,19 @@
 ---
 title: "Benoit Paquier"
-subtitle: 'Développeur web fullstack, formateur & étudiant préparant un diplôme universitaire "Fabmanager"'
+subtitle: "Développeur web fullstack & formateur"
 
 about:
   id: a-propos
   title: "à propos"
   paragraph1: "Hello ! 🤙"
-  paragraph2: "Je suis développeur web fullstack, guidé par une approche artisanale du code (software craftmanship) et soucieux des bonnes pratiques de développement. Mon objectif : concevoir des applications web fiables, maintenables et accessibles, avec un vrai souci de qualité — dans le code comme dans l’expérience utilisateur."
+  paragraph2: "Je suis développeur web fullstack depuis 2015, guidé par une approche artisanale du code (software craftmanship) et soucieux des bonnes pratiques de développement. Mon objectif : concevoir des applications web fiables, maintenables et accessibles, avec un vrai souci de qualité — dans le code comme dans l’expérience utilisateur."
   paragraph3: "Je m’inscris dans une démarche de qualité pour un numérique responsable, en privilégiant des solutions performantes, sobres et accessibles. Frontend ou backend, je m’adapte aux besoins pour construire des solutions efficaces, durables et centrées utilisateur."
   paragraph4: "J’interviens aussi comme formateur, pour transmettre ces valeurs et accompagner les développeurs dans la montée en compétence, parce qu’un bon code, c’est encore mieux quand il est partagé."
-  paragraph5: 'Je prépare également un diplôme universitaire "Fabmanager - Techniques de facilitation & de fabrication numérique". au Faclab de Gennevilliers à l''université de Cergy.'
 
 projects:
   id: projets
   title: projets
   projects:
-    - title: "Nous La Rochelle"
-      illustration: "la-rochelle.webp"
-      client: "Office de tourisme de La Rochelle"
-      description: "Contribution à la refonte du site de l’office de tourisme de La Rochelle. Développement et mise en place de l'infrastructure pour un déploiement optimisé, sécurisé et scalable."
-      website: "https://www.nous-larochelle.fr/"
-      stacks:
-        - value: "NextJS"
-        - value: "Strapi"
-        - value: "Typescript"
-        - value: "Docker"
-        - value: "PostgreSQL"
-        - value: "Jest"
-        - value: "Playwright"
-        - value: "Gitlab CI/CD"
-        - value: "Scaleway"
-        - value: "Cloudflare"
     - title: "Boris"
       illustration: "boris.webp"
       client: "Ministère chargé du logement"
@@ -62,6 +45,22 @@ projects:
         - value: "Playwright"
         - value: "Gitlab CI"
         - value: "DDD"
+    - title: "Nous La Rochelle"
+      illustration: "la-rochelle.webp"
+      client: "Office de tourisme de La Rochelle"
+      description: "Contribution à la refonte du site de l’office de tourisme de La Rochelle. Développement et mise en place de l'infrastructure pour un déploiement optimisé, sécurisé et scalable."
+      website: "https://www.nous-larochelle.fr/"
+      stacks:
+        - value: "NextJS"
+        - value: "Strapi"
+        - value: "Typescript"
+        - value: "Docker"
+        - value: "PostgreSQL"
+        - value: "Jest"
+        - value: "Playwright"
+        - value: "Gitlab CI/CD"
+        - value: "Scaleway"
+        - value: "Cloudflare"
     - title: "fairness.coop"
       illustration: "fairness.webp"
       client: "Fairness"
